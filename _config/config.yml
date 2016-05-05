@@ -1,0 +1,14 @@
+---
+Name: sabot_config
+Only:
+  moduleexists: multisites
+---
+Site:
+  extensions:
+    - SabotConfigExtension
+SiteTree:
+  extensions:
+    - SabotPageExtension
+ContentController:
+  extensions:
+    - SabotControllerExtension
