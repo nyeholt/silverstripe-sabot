@@ -10,6 +10,7 @@ class SabotControllerExtension extends Extension {
         Requirements::css('sabot/css/sabot.css');
         Requirements::javascript('sabot/javascript/jquery.hotkeys.js');
         Requirements::javascript('sabot/javascript/flying-focus.js');
+        Requirements::javascript('sabot/javascript/jquery.scrollTo.js');
         Requirements::javascript('sabot/javascript/jquery.jfontsize-1.0.js');
         Requirements::javascript('sabot/javascript/accessibility-init.js');
         

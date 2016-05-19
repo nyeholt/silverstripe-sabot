@@ -23,8 +23,8 @@ class SabotConfigExtension extends DataExtension {
     }
     
     public function SiteAccessKeys() {
-        $keys = ArrayList::create();
-        $this->owner->extend('updateSiteAccessKeys', $keys);
+        $keys = $this->owner->customKeys();
+        $this->owner->invokeWithExtensions('updateSiteAccessKeys', $keys);
         return $keys;
     }
 }

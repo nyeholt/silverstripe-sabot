@@ -82,7 +82,7 @@
 				var topElem = accessibilityConfig.scrollTop || 'header';
 				var messageHolder = accessibilityConfig.scrollMessage || '#sabotScrollMessage';
 				var scroll_timer;
-				var top = topElem.position().top;
+				var top = $(topElem).offset().top;
 				var $window = $(window);
 				var displayed = false;
 
