@@ -14,6 +14,7 @@
 		"silverstripe/framework": "~3.2"
 	},
 	"extra": {
+		"installer-name": "sabot",
 		"branch-alias": {
 			"dev-master": "1.0.x-dev"
 		}
