@@ -9,10 +9,6 @@ class SabotPageExtension extends SiteTreeExtension {
     );
     
     public function updateCMSFields(\FieldList $fields) {
-        
-        Requirements::javascript('sabot/javascript/HTML_CodeSniffer/HTMLCS.js');
-        Requirements::javascript('sabot/javascript/HTML_CodeSniffer/HTMLCS.Util.js');
-        
         $this->addKeyField($fields);
     }
     

@@ -1,14 +1,23 @@
 ---
 Name: sabot_config
-Only:
-  moduleexists: multisites
 ---
-Site:
-  extensions:
-    - SabotConfigExtension
 SiteTree:
   extensions:
     - SabotPageExtension
 ContentController:
   extensions:
     - SabotControllerExtension
+LeftAndMain:
+  extra_requirements_javascript:
+    - sabot/javascript/HTML_CodeSniffer/HTMLCS.js
+    - sabot/javascript/HTML_CodeSniffer/HTMLCS.Util.js
+    - sabot/javascript/sabot-htmlsniffer.js
+
+---
+Name: sabot_ms_config
+Only:
+  moduleexists: multisites
+---
+Site:
+  extensions:
+    - SabotConfigExtension
