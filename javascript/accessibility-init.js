@@ -3,7 +3,6 @@
 	
 	$(function () {
 		
-		
 		if ($('#__ss_access').length) {
 			accessibilityConfig = JSON.parse($('#__ss_access').val());
 		}
@@ -13,7 +12,6 @@
 		}
 		
 		var bindActions = function () {
-			
 			var skipMenu = accessibilityConfig.skipMenu || '#main-skip-block';
 			var skipMenuLinks = skipMenu + ' a';
 			var menuCombo = accessibilityConfig.menuCombo || 'ctrl+m';

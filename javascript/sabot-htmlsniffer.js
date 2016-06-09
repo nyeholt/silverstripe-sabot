@@ -48,11 +48,10 @@
 
 					var elemText = $(msg.element).text();
 					if (elemText.length) {
-						elemText = '<br/>"' + elemText + '"';
+						elemText = '<span class="sniff-element-text">' + elemText + '</span>';
 					}
 					
 					var row = '<tr class="sniff-' + messageType.toLowerCase() +'">';
-					
 					
 					row += '<td>' + messageType + '</td>';
 					row += '<td>' + msg.msg + elemText + '</td>';
