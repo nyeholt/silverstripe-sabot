@@ -12,6 +12,8 @@ LeftAndMain:
     - sabot/javascript/HTML_CodeSniffer/HTMLCS.js
     - sabot/javascript/HTML_CodeSniffer/HTMLCS.Util.js
     - sabot/javascript/sabot-htmlsniffer.js
+  extra_requirements_css:
+    - sabot/css/sabot-admin.css
 
 ---
 Name: sabot_ms_config

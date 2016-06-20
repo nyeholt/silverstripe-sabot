@@ -1,0 +1,27 @@
+table.sabot-htmlsniff {
+}
+
+table.sabot-htmlsniff thead td {
+	font-weight: bold;
+}
+
+table.sabot-htmlsniff td {
+	padding: 0.5rem;
+	vertical-align: top;
+	border: 1px solid #000;
+}
+
+table.sabot-htmlsniff tbody td {
+	background-color: #fff;
+	
+}
+
+table.sabot-htmlsniff tr.sniff-warning td {
+	font-weight: bold;
+	color: #FF6130;
+}
+
+table.sabot-htmlsniff tr.sniff-error td {
+	font-weight: bold;
+	color: #aa0000;
+}

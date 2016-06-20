@@ -81,10 +81,17 @@
 				var tableElement = $('<table class="sabot-htmlsniff">');
 
 				var button = $('<button>');
-				button.text('Check');
+				button.text('WCAG check');
 				button.click(function (e) {
 					tableElement.empty();
 					e.preventDefault();
+
+					if (tableElement.hasClass('active')) {
+						tableElement.removeClass('active');
+						return;
+					}
+					tableElement.addClass('active');
+					
 					var ed = tinymce.get(editor.find('textarea').attr('id'));
 					var source = ed.getContent();
 
