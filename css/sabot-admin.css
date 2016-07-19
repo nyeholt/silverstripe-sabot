@@ -24,3 +24,8 @@ table.sabot-htmlsniff tr.sniff-error td {
 	font-weight: bold;
 	color: #aa0000;
 }
+
+table.sabot-htmlsniff .sniff-element-text {
+	display: block;
+    font-weight: bold;
+}
