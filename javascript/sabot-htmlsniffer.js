@@ -76,6 +76,9 @@
 
 		$('div.field.htmleditor').entwine({
 			onmatch: function () {
+				if ($(this).hasClass('readonly')) {
+					return;
+				}
 				var standard = 'WCAG2AA';
 				var editor = $(this);
 				var tableElement = $('<table class="sabot-htmlsniff">');
