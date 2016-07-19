@@ -59,7 +59,7 @@
 
 					var content = [];
 					for (var j = 0; j < techniques.length; j++) {
-						content.push('<a href="http://www.w3.org/TR/WCAG20-TECHS/' + techniques[j] + '">' + techniques[j] + '</a>');
+						content.push('<a href="http://www.w3.org/TR/WCAG20-TECHS/' + techniques[j] + '" target="_blank">' + techniques[j] + '</a>');
 					}
 
 
