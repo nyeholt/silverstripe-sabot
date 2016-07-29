@@ -70,8 +70,9 @@
 					sizeChange: 1
 				};
 				// 'span', 'ul', 'input', 'a', 'td', 'th', 'tr', 'dd', 'dt', 'h1', 'h2', 'h3', 'h4', 'h5'
-				$([accessibilityConfig.fontSizeElements]).each(function(k,v){
-					$(v).jfontsize(jfontsize_options);
+				var els = accessibilityConfig.fontSizeElements.split(',');
+				$(els).each(function(k,v){
+					$(v.trim()).jfontsize(jfontsize_options);
 				});
 			}
 
