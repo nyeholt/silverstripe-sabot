@@ -11,7 +11,7 @@ class SabotControllerExtension extends Extension {
         
         Requirements::javascript('sabot/javascript/accessibility-init.js');
         
-        if ($site->SabotConfig) {
+        if ($site && $site->SabotConfig) {
             $config = $site->SabotConfig->getValues();
             if (count($config)) {
                 if (isset($config['menuCombo'])) {
