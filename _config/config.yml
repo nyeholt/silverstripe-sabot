@@ -3,10 +3,10 @@ Name: sabot_config
 ---
 SilverStripe\CMS\Model\SiteTree:
   extensions:
-    - SabotPageExtension
+    - Symbiote\Sabot\SabotPageExtension
 SilverStripe\CMS\Controllers\ContentController:
   extensions:
-    - SabotControllerExtension
+    - Symbiote\Sabot\SabotControllerExtension
 SilverStripe\Admin\LeftAndMain:
   extra_requirements_javascript:
     - sabot/javascript/HTML_CodeSniffer/HTMLCS.js
@@ -21,4 +21,4 @@ Only:
 ---
 Site:
   extensions:
-    - SabotConfigExtension
+    - Symbiote\Sabot\SabotConfigExtension
