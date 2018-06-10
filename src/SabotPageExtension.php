@@ -1,5 +1,17 @@
 <?php
 
+namespace Symbiote\Sabot;
+
+
+use SilverStripe\Forms\FieldList;
+use SilverStripe\ORM\ArrayList;
+use SilverStripe\View\ArrayData;
+use SilverStripe\CMS\Model\SiteTreeExtension;
+use Symbiote\MultiValueField\Fields\KeyValueField;
+use Symbiote\Multisites\Multisites;
+use Symbiote\Multisites\Model\Site;
+
+
 /**
  * @author marcus
  */
@@ -8,11 +20,11 @@ class SabotPageExtension extends SiteTreeExtension {
         'CustomAccessKeys' => 'MultiValueField',
     );
     
-    public function updateCMSFields(\FieldList $fields) {
+    public function updateCMSFields(FieldList $fields) {
         $this->addKeyField($fields);
     }
     
-    public function updateSiteCMSFields(\FieldList $fields) {
+    public function updateSiteCMSFields(FieldList $fields) {
         $this->addKeyField($fields);
     }
     

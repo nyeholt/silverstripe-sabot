@@ -1,5 +1,12 @@
 <?php
 
+namespace Symbiote\Sabot;
+
+use SilverStripe\Forms\FieldList;
+use SilverStripe\ORM\DataExtension;
+use Symbiote\MultiValueField\Fields\KeyValueField;
+
+
 /**
  * @author marcus
  */
@@ -18,7 +25,7 @@ class SabotConfigExtension extends DataExtension {
         'scrollMessage' => '#sabotScrollMessage',
     );
     
-    public function updateSiteCMSFields(\FieldList $fields) {
+    public function updateSiteCMSFields(FieldList $fields) {
         $options = array(
             'skipMenu'  => 'Skip links CSS element selector ',
             'useFlyingFocus'    => 'Use flying focus?',

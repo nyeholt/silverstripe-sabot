@@ -1,14 +1,26 @@
 <?php
 
+namespace Symbiote\Sabot;
+
+
+use SilverStripe\View\Requirements;
+use SilverStripe\Core\Extension;
+use SilverStripe\SiteConfig\SiteConfig;
+
+
 /**
  * @author marcus
  */
 class SabotControllerExtension extends Extension {
     public function onAfterInit() {
-        $site = Multisites::inst()->getCurrentSite();
+
+        if (class_exists(Symbiote\Multisites\Multisites::class)) {
+            $site = Symbiote\Multisites\Multisites::inst()->getCurrentSite();
+        } else {
+            $site = SiteConfig::get()->first();
+        }
         
         Requirements::css('sabot/css/sabot.css');
-        
         Requirements::javascript('sabot/javascript/accessibility-init.js');
         
         if ($site && $site->SabotConfig) {
