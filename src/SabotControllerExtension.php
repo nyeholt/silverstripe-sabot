@@ -39,6 +39,7 @@ class SabotControllerExtension extends Extension {
                 }
                 
                 if (isset($config['useFlyingFocus'])) {
+                    Requirements::css('symbiote/silverstripe-sabot: client/css/flying-focus.css');
                     Requirements::javascript('symbiote/silverstripe-sabot: client/javascript/flying-focus.js');
                 }
                 $script = 'window.sabotConfig = ' . json_encode($config) . ';';
