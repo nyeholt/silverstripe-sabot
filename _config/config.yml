@@ -1,20 +1,19 @@
 ---
 Name: sabot_config
 ---
-SiteTree:
+SilverStripe\CMS\Model\SiteTree:
   extensions:
-    - SabotPageExtension
-ContentController:
+    - Symbiote\Sabot\SabotPageExtension
+SilverStripe\CMS\Controllers\ContentController:
   extensions:
-    - SabotControllerExtension
-LeftAndMain:
+    - Symbiote\Sabot\SabotControllerExtension
+SilverStripe\Admin\LeftAndMain:
   extra_requirements_javascript:
     - sabot/javascript/HTML_CodeSniffer/HTMLCS.js
     - sabot/javascript/HTML_CodeSniffer/HTMLCS.Util.js
     - sabot/javascript/sabot-htmlsniffer.js
   extra_requirements_css:
     - sabot/css/sabot-admin.css
-
 ---
 Name: sabot_ms_config
 Only:
@@ -22,4 +21,4 @@ Only:
 ---
 Site:
   extensions:
-    - SabotConfigExtension
+    - Symbiote\Sabot\SabotConfigExtension

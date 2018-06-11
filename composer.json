@@ -1,22 +1,26 @@
 {
-	"name": "silverstripe-australia/silverstripe-sabot",
+	"name": "symbiote/silverstripe-sabot",
 	"description": "Several small tools to improve accessibility",
-	"type": "silverstripe-module",
+	"type": "silverstripe-vendormodule",
 	"keywords": ["silverstripe", "accessibility"],
 	"license": "BSD-3-Clause",
 	"authors": [
 		{
 			"name": "Marcus Nyeholt",
-			"email": "marcus@silverstripe.com.au"
+			"email": "marcus@symbiote.com.au"
 		}
 	],
 	"require": {
-		"silverstripe/framework": "~3.2"
+		"silverstripe/framework": "~4.0",
+		"symbiote/silverstripe-multivaluefield": "~5.0"
 	},
 	"extra": {
 		"installer-name": "sabot",
 		"branch-alias": {
-			"dev-master": "1.0.x-dev"
-		}
+			"dev-master": "2.0.x-dev"
+		},
+		"expose": [
+            "client"
+        ]
 	}
 }

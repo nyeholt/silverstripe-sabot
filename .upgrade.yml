@@ -1,0 +1,4 @@
+mappings:
+  SabotControllerExtension: Symbiote\Sabot\SabotControllerExtension
+  SabotConfigExtension: Symbiote\Sabot\SabotConfigExtension
+  SabotPageExtension: Symbiote\Sabot\SabotPageExtension
