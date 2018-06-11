@@ -6,6 +6,9 @@ use SilverStripe\Forms\FieldList;
 use SilverStripe\ORM\DataExtension;
 use Symbiote\MultiValueField\Fields\KeyValueField;
 
+use SilverStripe\CMS\Model\SiteTree;
+use Symbiote\Multisites\Site;
+use SilverStripe\SiteConfig\SiteConfig;
 
 /**
  * @author marcus
@@ -18,12 +21,16 @@ class SabotConfigExtension extends DataExtension {
     private static $default_sabot_options = array(
         'skipMenu' => '#main-skip-block',
         'useFlyingFocus'    => '1',
-        'menuCombo' => 'ctrl+m',
+        'menuCombo' => 'alt+i',
         'fontSizeElements' => 'span,ul,input,a,td,th,tr,dd,dt,h1,h2,h3,h4,h5',
         'showScrollup' => '1',
         'scrollTop' => 'header',
         'scrollMessage' => '#sabotScrollMessage',
     );
+
+    public function updateCMSFields(FieldList $fields) {
+        return $this->updateSiteCMSFields($fields);
+    }
     
     public function updateSiteCMSFields(FieldList $fields) {
         $options = array(
@@ -62,8 +69,20 @@ class SabotConfigExtension extends DataExtension {
     }
     
     public function SiteAccessKeys() {
-        $keys = $this->owner->customKeys();
-        $this->owner->invokeWithExtensions('updateSiteAccessKeys', $keys);
+        $keys = [];
+        if ($this->owner instanceof Site) {
+            $keys = $this->owner->customKeys();
+        } else if ($this->owner instanceof SiteConfig) {
+            $home = SiteTree::get()->filter('URLSegment', 'home')->first();
+            if ($home) {
+                $keys = $home->customKeys();
+            }
+        }
+        
+        if ($keys) {
+            $this->owner->invokeWithExtensions('updateSiteAccessKeys', $keys);
+        }
+        
         return $keys;
     }
 }

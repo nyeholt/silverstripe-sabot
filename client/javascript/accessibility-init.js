@@ -14,7 +14,7 @@
 		var bindActions = function () {
 			var skipMenu = accessibilityConfig.skipMenu || '#main-skip-block';
 			var skipMenuLinks = skipMenu + ' a';
-			var menuCombo = accessibilityConfig.menuCombo || 'ctrl+m';
+			var menuCombo = accessibilityConfig.menuCombo || 'alt+i';
 
 			$(document).bind('keydown', menuCombo, function () {
 				$(skipMenuLinks).first().focus();

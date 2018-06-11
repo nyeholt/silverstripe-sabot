@@ -10,6 +10,7 @@ use SilverStripe\CMS\Model\SiteTreeExtension;
 use Symbiote\MultiValueField\Fields\KeyValueField;
 use Symbiote\Multisites\Multisites;
 use Symbiote\Multisites\Model\Site;
+use SilverStripe\SiteConfig\SiteConfig;
 
 
 /**
@@ -29,7 +30,7 @@ class SabotPageExtension extends SiteTreeExtension {
     }
     
     public function addKeyField($fields) {
-        $options = KeyValueField::create('CustomAccessKeys', 'Access keys');
+        $options = KeyValueField::create('CustomAccessKeys', 'Access links');
         $fields->addFieldToTab('Root.Accessibility', $options);
     }
     
@@ -48,8 +49,17 @@ class SabotPageExtension extends SiteTreeExtension {
     }
     
     public function PageAccessKeys() {
-        $site = Multisites::inst()->getCurrentSite();
-        $keys = $site->SiteAccessKeys();
+        $site = null;
+        if (class_exists(Symbiote\Multisites\Multisites::class)) {
+            $site = Symbiote\Multisites\Multisites::inst()->getCurrentSite();
+        } else {
+            $site = SiteConfig::get()->first();
+        }
+
+        $keys = ArrayList::create();
+        if ($site && $site->hasMethod('SiteAccessKeys')) {
+            $keys = $site->SiteAccessKeys();
+        }
         
         if (!($this->owner instanceof Site)) {
             $pageKeys = $this->owner->customKeys();
@@ -57,6 +67,8 @@ class SabotPageExtension extends SiteTreeExtension {
                 $keys->push($k);
             }
         }
+
+        $keys->removeDuplicates('Link');
         
         // TODO add in the page specific ones
         $this->owner->invokeWithExtensions('updatePageAccessKeys', $keys);

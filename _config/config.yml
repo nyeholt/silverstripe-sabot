@@ -9,11 +9,11 @@ SilverStripe\CMS\Controllers\ContentController:
     - Symbiote\Sabot\SabotControllerExtension
 SilverStripe\Admin\LeftAndMain:
   extra_requirements_javascript:
-    - sabot/javascript/HTML_CodeSniffer/HTMLCS.js
-    - sabot/javascript/HTML_CodeSniffer/HTMLCS.Util.js
-    - sabot/javascript/sabot-htmlsniffer.js
+    - "symbiote/silverstripe-sabot: client/javascript/HTML_CodeSniffer/HTMLCS.js"
+    - "symbiote/silverstripe-sabot: client/javascript/HTML_CodeSniffer/HTMLCS.Util.js"
+    - "symbiote/silverstripe-sabot: client/javascript/sabot-htmlsniffer.js"
   extra_requirements_css:
-    - sabot/css/sabot-admin.css
+    - "symbiote/silverstripe-sabot: client/css/sabot-admin.css"
 ---
 Name: sabot_ms_config
 Only:
